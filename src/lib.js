@@ -4,22 +4,23 @@ window.Kitana = {
     },
 
     getElementsByClassName: function( class_list, elem ) {
-        if ( document.getElementsByClassName ) {
-            var res = [], nodes = ( elem || document ).getElementsByClassName( class_list );
+        var res = [], i, ilen, j, jlen;
 
-            for ( var i = 0, ilen = nodes.length; i < ilen; i++ ) {
+        if ( document.getElementsByClassName ) {
+            var nodes = ( elem || document ).getElementsByClassName( class_list );
+
+            for ( i = 0, ilen = nodes.length; i < ilen; i++ ) {
                 res[ i ] = nodes[ i ];
             }
         } else {
             var node = elem || document,
                 list = node.getElementsByTagName( "*" ),
-                arr  = class_list.split( /\s+/ ),
-                res  = [];
+                arr  = class_list.split( /\s+/ );
 
-            for ( var i = 0, ilen = list.length; i < ilen; i++ )
-            for ( var j = 0, jlen = arr.length;  j < jlen; j++ ) {
+            for ( i = 0, ilen = list.length; i < ilen; i++ )
+            for ( j = 0, jlen = arr.length;  j < jlen; j++ ) {
                 if ( list[ i ].className.search( "\\b" + arr[ j ] + "\\b") != -1 ) {
-                    res.push( list[ i ] )
+                    res.push( list[ i ] );
                     break;
                 }
             }
@@ -45,7 +46,7 @@ window.Kitana = {
 
         var re = new RegExp( "(^|\\s)" + class_name + "(\\s|$)", "g" );
 
-        if ( re.test( elem.className ) ) { return false; };
+        if ( re.test( elem.className ) ) { return false; }
 
         elem.className = ( elem.className + " " + class_name ).replace( /\s+/g, " " ).replace( /(^ | $)/g, "" );
 

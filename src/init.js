@@ -1,7 +1,7 @@
 window.onload = function() {
     var config = {
-        width: 650,
-        height: 520,
+        width: 510,
+        height: 300,
         middleLineColor: "rgb(133,205,250)",
         axisX: {
             max: 50,
@@ -22,8 +22,7 @@ window.onload = function() {
                 { val: 3,   lbl: "100%" }
             ]
         },
-        data: [
-            {
+        data: [{
                 color: "rgb(102,217,2)",
                 label: "Менеджмент",
                 id: "someid",
@@ -32,21 +31,22 @@ window.onload = function() {
                     { x: 28.4, y: 2,   percent: 70 },
                     { x: 40.4, y: 0.8, percent: 10 }
                 ]
-            },
-            {
+            }, {
                 color: "rgb(0,150,245)",
                 label: "Менеджер",
                 id: "someid2",
                 points: [ { x: 28, y: 2.2, percent: 15 } ]
-            },
-            {
+            }, {
                 color: "rgb(241,220,45)",
                 label: "Программист",
                 id: "someid3",
                 points: [
-                    { x: 19 , y: 0.2, percent: 12 },
-                    { x: 24,  y: 0.6, percent: 15 },
-                    { x: 28,  y:3,    percent: 1 }
+                    { x: 17, y: 2.3, percent: 50 },
+                    { x: 24, y: 0.6, percent: 15 },
+                    { x: 28, y: 3,   percent: 1  },
+                    { x: 35, y: 3,   percent: 6  },
+                    { x: 40, y: 2,   percent: 9  },
+                    { x: 48, y: 0.5, percent: 31 }
                 ]
             }
         ]
@@ -54,7 +54,7 @@ window.onload = function() {
 
     var chart = new Chart( "#charts", config ), $ = Kitana, active, id;
 
-    active = $.find( "charts-nav__link" )[ 0 ];
+    active = $.find( "charts-nav__link" )[ 2 ];
 
     $.addEvent( $.find( "charts-nav" )[ 0 ], "click", onChartsLinkClick );
 

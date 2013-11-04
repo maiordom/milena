@@ -2,7 +2,7 @@ Milena = {};
 
 Milena.Plot = function( id, config ) {
     var w, h, ow, oh, plot, svg, ax, ay, axis = {}, charts = {}, tip2 = {},
-        margin = { left: 50, top: 60, right: 50, bottom: 30 };
+        margin = { left: 20, top: 60, right: 50, bottom: 30 };
 
     function init() {
         cacheData();
